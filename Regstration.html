@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .contaner{
+            width: 50vw;
+            height:34vw;
+            background: linear-gradient(to right,red,red,rgb(177, 35, 58),rgb(177, 35, 58));
+            position: absolute;
+            top: 50%;
+            left: 50%; 
+            transform: translate(-50%,-50%);
+            display: flex;
+            outline: #eee solid 2spx;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .contaner div{
+            height:34vw;
+            width:25vw;
+            background-color: white;
+            
+        }
+        .contaner .signin{
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            flex-direction: column; 
+           transition: 0.8s;
+        }
+        .contaner .signin *{
+            display: flex;
+            justify-content: center;
+            height: fit-content;
+            
+        }
+        .contaner .signin h1{
+            
+            margin-top: 4vw;
+        }
+        .contaner .signin div{
+            margin-top: 1vw;
+        }
+        .contaner .signin div input{
+            width: 20vw;
+            padding: 10px 10px;
+            background-color: #edebed;
+            border: none;
+            border-radius: 2px;
+        }
+        .contaner .signin div .email{
+            margin-top:3vw ;
+        }
+        .contaner .signin div button{
+            margin-top:1vw;
+            width: 12vw;
+            height: 3.5vw;
+            background-color: tomato;
+            border-radius: 35px;
+            padding-left: 41px;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            border: 1px solid white;
+            transform: translateX(0vw);
+            transition: 0.8s;
+            cursor: pointer;
+        }
+        .contaner .signin div button:hover{
+            transform: scale(1.1,1.1);
+        }
+        .contaner .signup{
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            transition: 0.8s;
+            transform: translateX(-25vw);
+        }
+        .contaner .signup *{
+            display: flex;
+            justify-content: center;
+            height: fit-content;
+        }
+        .contaner .signup h1{
+            
+            margin-top: 4vw;
+        }
+        .contaner .signup div{
+            margin-top: 1vw;
+        }
+        .contaner .signup div input{
+            width: 20vw;
+            padding: 10px 10px;
+            background-color: #edebed;
+            border: none;
+            border-radius: 2px;
+        }
+        .contaner .signup div .username{
+            margin-top:3vw ;
+        }
+        .contaner .signup div button{
+            margin-top:1vw;
+            width: 12vw;
+            height: 3.5vw;
+            background-color: tomato;
+            border-radius: 35px;
+            padding-left: 40px;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            border: 1px solid white;
+            transition: 0.5s;
+            transform: translateX(0vw);
+            cursor: pointer;
+        }
+        .contaner .signup div button:hover{
+            transform: scale(1.1,1.1);
+        }
+        .contaner .he{
+            position: absolute;
+            top: 15vw;
+            left: 5vw;
+            width: 15vw;
+            height: 5vw;
+            background-color: transparent;
+            border-radius: 30px;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            border: 1px solid white;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        .contaner .he:hover{
+            transform: scale(1.1,1.1);
+        }
+        .contaner .hein{
+            position: absolute;
+            top: 15vw;
+            left: 30vw;
+            width: 15vw;
+            height: 5vw;
+            background-color: transparent;
+            border-radius: 35px;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            border: 1px solid white;
+            transition: 0.5s;
+            z-index: -5;
+            cursor: pointer;
+        }
+        .contaner .hein:hover{
+            transform: scale(1.1,1.1);
+        }
+        .pass{
+            display: flex;
+            align-items: center;
+            width: 25vw;
+
+        }
+        .contaner .pass input{
+            margin-left: 1.4vw;
+        }
+        .contaner .pass svg{
+            position: relative;
+            left: -2vw;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="contaner">
+        <button onclick="showsignup()" class="he">SIGNUP</button>
+        <button onclick="showsignin()" class="hein">SIGNIN</button>
+        <div id="signup" class="signup">
+                <h1>SIGNUP</h1>
+                <div>
+                    <input id="username" class="username" type="text" placeholder="username" required>
+                </div>
+                <div>
+                    <input id="email" class="email" type="email" placeholder="Email" minlength="5" required>
+                </div>
+                <div class="pass">
+                    <input id="password" type="password" placeholder="Password" required><svg onclick="showpass(this)" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
+                </div>
+                <div class="pass">
+                    <input id="confirmpassword" type="password" placeholder="confirm Password" required><svg onclick="showpass(this)" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
+                </div>
+                <div>
+                    <button id="signupbtn" onclick="validateSignup()" class="signup">SIGNUP</button>
+                </div>
+        </div>
+        <div id="signin" class="signin">
+            <h1>SIGNIN</h1>
+                <div>
+                    <input id="signinemail" class="email" type="email" placeholder="Email" required>
+                </div>
+               <div class="pass">
+                    <input id="signinpassword" type="password" placeholder="Password" required><svg onclick="showpass(this)" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
+               </div>
+               <div>
+                <button onclick="validateSignin()" id="signinbtn" class="signin">SIGNIN</button>
+               </div>   
+        </div>
+    </div>
+    <script>
+        var data = [];
+        function validateSignup(){
+            let username = document.getElementById('username').value;
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            let confirmpassword = document.getElementById('confirmpassword').value;
+            if(username && password && email && confirmpassword){
+                if(password == confirmpassword){
+                    let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*!@#$%^&*()_+=-|).{6,}$/
+
+                    if(regex.test(password)){
+                        var user = {
+                        username : username,
+                        email : email,
+                        password : password,
+                        }
+                        data.push(user);
+                        alert('sign up successfully');
+                    }
+                    else{
+                        alert('make a strong password');
+                    }
+                }
+                else{
+                    alert('please enter same password');
+                }
+            }
+        }
+        function validateSignin(){
+            let email = document.getElementById('signinemail').value;
+            let password = document.getElementById('signinpassword').value;
+            if(email && password){
+                data.forEach((user) =>{
+                    if(user.email == email && user.password == password){
+                        alert('signin sucsses');
+                    }else{
+                        alert('in correct email or password');
+                    }
+                });
+            }
+            window.location.href = 'index.html';
+        }
+        function showsignup(){
+            var signup = document.getElementById('signup');
+            var signin = document.getElementById('signin');
+            signup.style.transform = 'translateX(0vw)';
+            signin.style.transform = 'translateX(25vw)';
+        }
+        function showsignin(){
+            var signup = document.getElementById('signup');
+            var signin = document.getElementById('signin');
+            signup.style.transform = 'translateX(-25vw)';
+            signin.style.transform = 'translateX(0vw)';
+        }
+        let ispass = false;
+        function showpass(svg){
+            var pass = document.querySelectorAll('.contaner .pass input')
+            pass.forEach(x =>{
+                if(ispass){
+                    x.type = 'text';
+                    ispass = false;
+                }
+                else{
+                    x.type = 'password';
+                    ispass = true;
+                }
+            })
+        }
+   </script>
+</body>
+</html>
